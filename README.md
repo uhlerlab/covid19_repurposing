@@ -27,5 +27,4 @@ git clone http://github.com/uhlerlab/covid19_repurposing.git
 For demos of autoencoder and protein-protein interaction analysis, see the READMEs in Code_autoencoding and Code_ppi, respectively. The expected outputs are shown in the accompanying Jupyter notebooks in [Code_ppi/Code/SteinerTree_notebook.ipynb](https://nbviewer.jupyter.org/github/uhlerlab/covid19_repurposing/blob/main/Code_ppi/Code/SteinerTree_notebook.ipynb) and [Code_ppi/Code/CausalAnalysis.ipynb](https://nbviewer.jupyter.org/github/uhlerlab/covid19_repurposing/blob/main/Code_ppi/Code/CausalAnalysis.ipynb).
 
 ## Instructions for use
-In order to run the software on your data replace inputs shown in the figure below with your own data for (a) mining relevant drugs, (b) identifying the disease interactome and (c) investigating drug mechanism.
-<img align="center"  src="workflow.png?raw=true">
+In order to run the software on your data replace inputs in Jupyter notebooks in Code_ppi and scripts in Code_autoencoding with your own data.
