@@ -17,7 +17,8 @@ def main(args):
     torch.cuda.manual_seed(SEED)
     torch.backends.cudnn.deterministic = True
 
-    train_loader, test_loader = dl.get_data(args.data)
+    #train_loader, test_loader = dl.get_data(args.data)
+    train_loader, test_loader = dl.get_data("")
     trainer.train_network(train_loader, test_loader)
 
 if __name__ == "__main__":

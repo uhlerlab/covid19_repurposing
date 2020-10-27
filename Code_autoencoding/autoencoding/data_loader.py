@@ -29,14 +29,6 @@ def get_data(path):
                              num_workers=2, shuffle=False,
                              pin_memory=True)
 
-    """
-    for i in range(1000):
-        print(i)
-        for idx, batch in enumerate(train_set):
-            b = torch.from_numpy(batch).cuda()
-            b.cpu()
-    return
-    """
     return train_loader, test_loader
 
 def min_max_scale(x):
@@ -44,29 +36,24 @@ def min_max_scale(x):
 
 # Retrieves all gene expression vectors from gctx dataset
 def get_all_pairs(path):
-    g_df = parse(path)
-    df = g_df.data_df
+    #g_df = parse(path)
+    #df = g_df.data_df
     # Keep only blanco genes in correct order
     dropped_gene_idxs = pickle.load(open(BLANCO_DATA_DIR + 'dropped_genes_blanco.p',
                                          'rb'))
-    blanco_points = pickle.load(open(BLANCO_DATA_DIR + 'blanco_a549_individuals.p',
-                                     'rb'))
-    blanco_samples = []
-    for key in blanco_points.keys():
-        if 'Series' in key:
-            for idx, point in enumerate(blanco_points[key]):
-                blanco_samples.append(point)
-                if idx == 2:
-                    print(idx, len(blanco_points[key]))
-                    break
-    blanco_samples = np.array(blanco_samples, dtype='float32')
-    print(blanco_samples.shape)
 
-    print("NOT USING BLANCO SAMPLES")
-    df = df.drop(df.index[dropped_gene_idxs])
+    #df = df.drop(df.index[dropped_gene_idxs])
 
-    keys = list(df.keys())
-    vectors = df.values.transpose()
+    #keys = list(df.keys())
+
+    #vectors = df.values.transpose()
+
+    # Random data is given in vectors, keys below
+    # Follow the code above for loading in the appropriate datasets
+    vectors = np.random.rand(100, 911)
+    keys = np.random.randn(100, 1)
+
+
     vectors = np.log2(vectors + 1)
     print(vectors.shape)
     vectors = min_max_scale(vectors.T).T
@@ -105,4 +92,4 @@ class GeneVecs(Dataset):
 
     def __getitem__(self, idx):
         sample = self.train_pairs[idx][1]
-        return sample
+        return torch.from_numpy(sample).float()
