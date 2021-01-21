@@ -10,9 +10,9 @@ Ubuntu 16.04,
 Python 3.7, 
 PyTorch 1.6 (CUDA enabled), 
 cmapPy 4.0.1, 
-[OmicsIntegrator 2](https://github.com/fraenkel-lab/OmicsIntegrator2), 
+[OmicsIntegrator 2](omicsintegrator 2.3.10, https://github.com/fraenkel-lab/OmicsIntegrator2), 
 [causaldag 0.1a133](https://github.com/uhlerlab/causaldag), 
-networkx (2.4), 
+networkx (2.4, note that omicsintegrator 2.3.10 requires networkx==2.1), 
 scikit-learn (0.22.2), 
 graphviz (2.40.1)
 
